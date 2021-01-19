@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Chalk | Link Your Bank Account</title>
+        <script src="https://cdn.dwolla.com/1/dwolla.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="mainContainer">
+            <h1>Add your Bank to Chalk using Dwolla</h1>
+            <input type="button" id="start" value="Add Bank" style="height: 300px; width: 500px; font-size: 70px;" />
+        </div>
+        <div id="iavContainer" style="background-color: grey;"></div>
+        <script type="text/javascript">
+        dwolla.configure("sandbox");
+        document.getElementById("start").addEventListener("click", function(e){
+                var iavToken = 'Oygt2BaCAM3rhOoIA2snCyctPjP9Th8JNdLtVnzh9sPD99P2xU';
+                    dwolla.configure('sandbox');
+                    dwolla.iav.start(iavToken, {
+                            container: 'iavContainer',
+                            stylesheets: [
+                            'https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext'
+                            ],
+                            microDeposits: 'false',
+                            fallbackToMicroDeposits: (fallbackToMicroDeposits.value === 'false')
+                        }, function(err, res) {
+                    window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err) + ' -- Response: ' + JSON.stringify(res));
+            });
+        });
+        </script>
+    </body>
+</html>
