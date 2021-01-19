@@ -16,6 +16,7 @@
         <script type="text/javascript">
         dwolla.configure("sandbox");
         document.getElementById("start").addEventListener("click", function(e){
+            window.postMessage("Webview Console Log",window.dwollaToken)
                 var iavToken = 'Oygt2BaCAM3rhOoIA2snCyctPjP9Th8JNdLtVnzh9sPD99P2xU';
                     dwolla.configure('sandbox');
                     dwolla.iav.start(iavToken, {
