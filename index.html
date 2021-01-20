@@ -16,7 +16,7 @@
         <script type="text/javascript">
         dwolla.configure("sandbox");
         document.getElementById("start").addEventListener("click", function(e){
-            window.postMessage("Webview Console Log: " , window.dwollaToken, dwollaToken)
+            window.ReactNativeWebView.postMessage(window.dwollaToken)
                 var iavToken = 'F8Y2m6ooij7doJCAF4dvBX5bjhwSJdG81Xp6eVkZhFfVjfhd2z';
                     dwolla.configure('sandbox');
                     dwolla.iav.start(iavToken, {
