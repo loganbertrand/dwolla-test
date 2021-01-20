@@ -17,7 +17,7 @@
         dwolla.configure("sandbox");
         document.getElementById("start").addEventListener("click", function(e){
             //window.ReactNativeWebView.postMessage(window.dwollaToken)
-                var iavToken = 'SZ41KNdiskAT5lDqxYY5aKzDFbi7DH2z8yHnJ6fHtUffOJ6hH3';
+                var iavToken = window.dwollaToken;
                     dwolla.configure('sandbox');
                     dwolla.iav.start(iavToken, {
                             container: 'iavContainer',
@@ -26,7 +26,7 @@
                             ],
                             microDeposits: 'false',
                         }, function(err, res) {
-                    console.log('Error: ' + JSON.stringify(err) + ' -- Response: ' + JSON.stringify(res));
+                    console.log('Error: ' + JSON.stringify(err) + 'Response:' + JSON.stringify(res));
                     window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err) + ' -- Response: ' + JSON.stringify(res));
             });
         });
