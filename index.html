@@ -17,7 +17,7 @@
         dwolla.configure("sandbox");
         document.getElementById("start").addEventListener("click", function(e){
             //window.ReactNativeWebView.postMessage(window.dwollaToken)
-                var iavToken = "hGplM2iPv8MRwa2bDLOZ03pRn2YKceqWgvpIKbPgXJN9ivPU8a";
+                var iavToken = "COEyxXscMH6W4zwkv56WMEQo7Pil4WPa8NcI3HifGTAeWH0EFE";
                     dwolla.configure('sandbox');
                     dwolla.iav.start(iavToken, {
                             container: 'iavContainer',
@@ -30,7 +30,7 @@
                     if(err){
                         window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err))
                     }else{
-                        window.ReactNativeWebView.postMessage("response:" +JSON.stringify(res))
+                        window.ReactNativeWebView.postMessage(JSON.stringify(res._links))
                     }
             });
         });
