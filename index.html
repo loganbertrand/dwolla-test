@@ -27,7 +27,11 @@
                             microDeposits: 'false',
                         }, function(err, res) {
                     console.log('Error: ' + JSON.stringify(err) + 'Response:' + JSON.stringify(res));
-                    window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err) + 'Response:' + JSON.stringify(res));
+                    if(err){
+                        window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err))
+                    }else{
+                        window.ReactNativeWebView.postMessage(JSON.stringify(res))
+                    }
             });
         });
         </script>
