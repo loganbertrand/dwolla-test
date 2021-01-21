@@ -11,6 +11,7 @@
         <div id="mainContainer">
             <h1>Add your Bank to Chalk using Dwolla</h1>
             <input type="button" id="start" value="Add Bank" style="height: 300px; width: 500px; font-size: 70px;" />
+            <input type="button" id="test" value="Test Token" style="height: 300px; width: 500px; font-size: 70px;" />
         </div>
         <div id="iavContainer" style="background-color: grey;"></div>
         <script type="text/javascript">
@@ -28,13 +29,15 @@
                         }, function(err, res) {
                     console.log('Error: ' + JSON.stringify(err) + 'Response:' + JSON.stringify(res));
                     if(err){
-                        console.log('Error: ' + JSON.stringify(err) + 'Response:' + JSON.stringify(res));
-                        //window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err))
+                        window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err))
                     }else{
-                        console.log('Error: ' + JSON.stringify(err) + 'Response:' + JSON.stringify(res));
-                        //window.ReactNativeWebView.postMessage(JSON.stringify(res._links["funding-source"].href))
+                        window.ReactNativeWebView.postMessage(JSON.stringify(res._links["funding-source"].href))
                     }
             });
+        });
+
+        document.getElementById("test").addEventListener("click", function(e){
+            window.ReactNativeWebView.postMessage(window.dwollaToken)
         });
         </script>
     </body>
