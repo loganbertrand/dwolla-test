@@ -30,7 +30,7 @@
                     if(err){
                         window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err))
                     }else{
-                        window.ReactNativeWebView.postMessage(JSON.stringify(res._links))
+                        window.ReactNativeWebView.postMessage(JSON.stringify(res._links.funding-source.href))
                     }
             });
         });
