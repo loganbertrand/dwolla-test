@@ -16,7 +16,7 @@
         <script type="text/javascript">
         dwolla.configure("sandbox");
         document.getElementById("start").addEventListener("click", function(e){
-            //window.ReactNativeWebView.postMessage(window.dwollaToken)
+            window.ReactNativeWebView.postMessage(window.dwollaToken)
                 var iavToken = "Kwn5isbGpjgEurUK6nyqzpLL48LWUE5FRQhbACDvc2QZw9GVga";
                     dwolla.configure('sandbox');
                     dwolla.iav.start(iavToken, {
@@ -28,9 +28,11 @@
                         }, function(err, res) {
                     console.log('Error: ' + JSON.stringify(err) + 'Response:' + JSON.stringify(res));
                     if(err){
-                        window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err))
+                        console.log('Error: ' + JSON.stringify(err) + 'Response:' + JSON.stringify(res));
+                        //window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err))
                     }else{
-                        window.ReactNativeWebView.postMessage(JSON.stringify(res._links["funding-source"].href))
+                        console.log('Error: ' + JSON.stringify(err) + 'Response:' + JSON.stringify(res));
+                        //window.ReactNativeWebView.postMessage(JSON.stringify(res._links["funding-source"].href))
                     }
             });
         });
