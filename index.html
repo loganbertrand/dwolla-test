@@ -17,7 +17,7 @@
         dwolla.configure("sandbox");
         document.getElementById("start").addEventListener("click", function(e){
             //window.ReactNativeWebView.postMessage(window.dwollaToken)
-                var iavToken = "hWydKKEMzWFaNaVAOZMfYPCT5B58TOGFQU5JQtHONiA1eYdBEw";
+                var iavToken = "0dbHOYnJmLC9dOojzBB4ORY2bBMnUM49J6tC0iSvWOWcmzhLkj";
                     dwolla.configure('sandbox');
                     dwolla.iav.start(iavToken, {
                             container: 'iavContainer',
@@ -30,7 +30,7 @@
                     if(err){
                         window.ReactNativeWebView.postMessage('Error: ' + JSON.stringify(err))
                     }else{
-                        window.ReactNativeWebView.postMessage(JSON.stringify(res._links.funding-source.href))
+                        window.ReactNativeWebView.postMessage(JSON.stringify(res._links["funding-source"].href))
                     }
             });
         });
