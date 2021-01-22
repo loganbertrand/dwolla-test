@@ -17,7 +17,7 @@
         <script type="text/javascript">
         dwolla.configure("sandbox");
         document.getElementById("start").addEventListener("click", function(e){
-                var iavToken = "Kwn5isbGpjgEurUK6nyqzpLL48LWUE5FRQhbACDvc2QZw9GVga";
+                var iavToken = window.dwollaToken;
                     dwolla.configure('sandbox');
                     dwolla.iav.start(iavToken, {
                             container: 'iavContainer',
